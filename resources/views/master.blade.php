@@ -24,5 +24,14 @@
         height: 500px;
         padding: 100px;
     }
+    img.img_slider{
+        height: 500px !important;
+    }
+    .custom-product{
+        height: 600px;
+    }
+    .carousel-caption{
+        background-color: rgb(167, 157, 157);
+    }
 </style>
 </html>

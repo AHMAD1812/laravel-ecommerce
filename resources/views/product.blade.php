@@ -1,7 +1,7 @@
 @extends('master')
 @section('content')
-< class="custom-product">
-    < id="myCarousel" class="carousel slide" data-ride="carousel">
+<div class="custom-product">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
           <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -24,11 +24,14 @@
             <div class="carousel-inner">
                 @foreach ($products as $item)
                   <div class="item {{$item['id']==1?'active':''}}">
-                    <img class="img_slider" src="{{$item['gallery']}}" alt="Chania">
-                    <div class="carousel-caption">
-                      <h3>{{$item['name']}}</h3>
-                      <p>{{$item['description']}}</p>
-                    </div>
+                    <a href="detail/{{$item['id']}}">
+                        <img class="img_slider" src="{{$item['gallery']}}" alt="Chania">
+                        <div class="carousel-caption">
+                        <h3>{{$item['name']}}</h3>
+                        <p>{{$item['description']}}</p>
+                        
+                    </a>
+                  </div>
                   </div>
                 @endforeach
             </div>
@@ -48,10 +51,12 @@
               <h3>Trending Products</h3>
             @foreach ($products as $item)
               <div class="trending-item">
+                <a href="detail/{{$item['id']}}">
                 <img class="trending-image" src="{{$item['gallery']}}" alt="Chania">
                 <div class="">
                   <h3>{{$item['name']}}</h3>
                 </div>
+                </a>
               </div>
             @endforeach
         </div>

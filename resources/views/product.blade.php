@@ -1,7 +1,7 @@
 @extends('master')
 @section('content')
-<div class="custom-product">
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+< class="custom-product">
+    < id="myCarousel" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
           <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -43,6 +43,18 @@
               <span class="sr-only">Next</span>
             </a>
           </div>
+
+          <div class="trending-wrapper">
+              <h3>Trending Products</h3>
+            @foreach ($products as $item)
+              <div class="trending-item">
+                <img class="trending-image" src="{{$item['gallery']}}" alt="Chania">
+                <div class="">
+                  <h3>{{$item['name']}}</h3>
+                </div>
+              </div>
+            @endforeach
+        </div>
 </div>
 
 @endsection
